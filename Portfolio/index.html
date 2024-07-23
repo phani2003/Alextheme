@@ -795,38 +795,7 @@ body.custom-background { background-image: url("images/main_bg_14.png"); backgro
 </div>
 <!-- /Portfolio Content -->
 
-<script>
-    // JavaScript for Portfolio Filtering
-    document.addEventListener('DOMContentLoaded', function() {
-        var portfolioGrid = document.querySelector('.portfolio-grid');
-        var filters = document.querySelectorAll('.portfolio-filters a');
 
-        filters.forEach(function(filter) {
-            filter.addEventListener('click', function(e) {
-                e.preventDefault();
-                var selectedCategory = this.getAttribute('data-group');
-
-                // Filter items
-                var items = portfolioGrid.querySelectorAll('.item');
-                items.forEach(function(item) {
-                    var dataGroups = JSON.parse(item.getAttribute('data-groups'));
-                    if (selectedCategory === 'category_all' || dataGroups.includes(selectedCategory)) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-
-                // Toggle active class
-                filters.forEach(function(filter) {
-                    filter.classList.remove('active');
-                });
-                this.classList.add('active');
-            });
-        });
-    });
-</script>
-	    
         
     </div>
 	</div>
